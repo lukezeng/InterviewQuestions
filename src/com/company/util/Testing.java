@@ -1,4 +1,11 @@
-package com.company;
+package com.company.util;
+
+import com.company.algorithms.SearchingAlgorithm;
+import com.company.algorithms.SortingAlgorithm;
+import com.company.interviewQuestions.DynamicProgramming;
+import com.company.interviewQuestions.LinkedListInterviewQuestions;
+import com.company.interviewQuestions.MathInterviewQuestions;
+import com.company.interviewQuestions.TreeInterviewQuestions;
 
 /**
  * Created by Luke on 1/31/2015.

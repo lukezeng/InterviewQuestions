@@ -1,6 +1,6 @@
-package com.company;
+package com.company.interviewQuestions;
 
-import com.company.dataStructure.Node;
+import com.company.dataStructures.Node;
 
 /**
  * Created by Luke on 2/1/2015.

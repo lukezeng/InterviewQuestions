@@ -1,4 +1,4 @@
-package com.company.dataStructure;
+package com.company.dataStructures;
 
 public class BinaryTreeNode{
     public int val;

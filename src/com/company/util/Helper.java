@@ -1,6 +1,6 @@
-package com.company;
+package com.company.util;
 
-import com.company.dataStructure.Node;
+import com.company.dataStructures.Node;
 
 /**
  * Created by Luke on 1/31/2015.

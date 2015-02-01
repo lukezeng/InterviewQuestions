@@ -1,6 +1,6 @@
-package com.company;
+package com.company.interviewQuestions;
 
-import com.company.dataStructure.BinaryTreeNode;
+import com.company.dataStructures.BinaryTreeNode;
 
 /**
  * Created by Luke on 2/1/2015.
@@ -12,9 +12,7 @@ public class TreeInterviewQuestions {
     }
 
     private static boolean validateBinarySearchTree(BinaryTreeNode node, int min, int max) {
-        if(node == null) return true;
-        if(node.val > max || node.val < min) return false;
-        return validateBinarySearchTree(node.left, min, node.val) && validateBinarySearchTree(node.right, node.val, max);
+        return node == null || !(node.val > max || node.val < min) && validateBinarySearchTree(node.left, min, node.val) && validateBinarySearchTree(node.right, node.val, max);
     }
 
     public static void inOrderTraverse(BinaryTreeNode node){

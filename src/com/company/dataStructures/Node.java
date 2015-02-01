@@ -1,4 +1,4 @@
-package com.company.dataStructure;
+package com.company.dataStructures;
 
 /**
  * Created by Luke on 2/1/2015.

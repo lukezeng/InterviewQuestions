@@ -1,9 +1,7 @@
-package com.company;
+package com.company.util;
 
-import com.company.dataStructure.BinaryTreeNode;
-import com.company.dataStructure.Node;
-
-import javax.swing.tree.TreeNode;
+import com.company.dataStructures.BinaryTreeNode;
+import com.company.dataStructures.Node;
 
 /**
  * Created by Luke on 1/31/2015.
@@ -30,8 +28,7 @@ public class Setup {
         Node node4 = new Node(4, node5);
         Node node3 = new Node(3, node4);
         Node node2 = new Node(2, node3);
-        Node node1 = new Node(1, node2);
-        return node1;
+        return new Node(1, node2);
     }
 
     public static Node getLoopedLinkedList(){
@@ -57,8 +54,7 @@ public class Setup {
         BinaryTreeNode binaryTreeNode2 = new BinaryTreeNode(3, binaryTreeNode1, binaryTreeNode3);
         BinaryTreeNode binaryTreeNode6 = new BinaryTreeNode(6, binaryTreeNode5, binaryTreeNode7);
         BinaryTreeNode binaryTreeNode4 = new BinaryTreeNode(4, binaryTreeNode2, binaryTreeNode6);
-        BinaryTreeNode binaryTreeNode8 = new BinaryTreeNode(8, binaryTreeNode4, binaryTreeNode9);
-        return binaryTreeNode8;
+        return new BinaryTreeNode(8, binaryTreeNode4, binaryTreeNode9);
     }
 
     public static BinaryTreeNode getBinarySearchTree(){
@@ -70,7 +66,6 @@ public class Setup {
         BinaryTreeNode binaryTreeNode2 = new BinaryTreeNode(2, binaryTreeNode1, binaryTreeNode3);
         BinaryTreeNode binaryTreeNode6 = new BinaryTreeNode(6, binaryTreeNode5, binaryTreeNode7);
         BinaryTreeNode binaryTreeNode4 = new BinaryTreeNode(4, binaryTreeNode2, binaryTreeNode6);
-        BinaryTreeNode binaryTreeNode8 = new BinaryTreeNode(8, binaryTreeNode4, binaryTreeNode9);
-        return binaryTreeNode8;
+        return new BinaryTreeNode(8, binaryTreeNode4, binaryTreeNode9);
     }
 }

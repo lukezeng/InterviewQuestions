@@ -1,6 +1,6 @@
-package com.company;
+package com.company.algorithms;
 
-import com.company.dataStructure.BinaryTreeNode;
+import com.company.dataStructures.BinaryTreeNode;
 
 import java.util.Deque;
 import java.util.LinkedList;
