@@ -45,7 +45,7 @@ public class Testing {
         System.out.println();
     }
 
-    public static void MathInterviewQuestions(){
+    public static void mathInterviewQuestions(){
         System.out.println("--------------------------------- Math Interview Questions---------------------------------------");
         MathInterviewQuestions.squareRoot(9);
         MathInterviewQuestions.squareRoot(0.5);
@@ -55,7 +55,7 @@ public class Testing {
         System.out.println();
     }
 
-    public static void LinkedListInterviewQuestions(){
+    public static void linkedListInterviewQuestions(){
         System.out.println("--------------------------------- LinkedList Interview Questions---------------------------------------");
         Helper.printLinkedList(Setup.getLinkedList());
         Helper.printLinkedList(LinkedListInterviewQuestions.reversLinkedList(Setup.getLinkedList()));
