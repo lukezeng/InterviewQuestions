@@ -67,10 +67,11 @@ public class Testing {
         System.out.println();
     }
 
-    public static void testingRecursiveAlgorithm(){
+    public static void treeInterviewQuestions(){
         System.out.println("--------------------------------- Tree Interview Questions---------------------------------------");
         System.out.println("Given binary search tree, validateBinarySearchTree is returning: " + TreeInterviewQuestions.validateBinarySearchTree(Setup.getBinarySearchTree()));
         System.out.println("Given random binary tree, validateBinarySearchTree is returning: " + TreeInterviewQuestions.validateBinarySearchTree(Setup.getRandomBinaryTree()));
+        System.out.println("Given binary binary tree, maxDepth is returning: " + TreeInterviewQuestions.maxDepth(Setup.getRandomBinaryTree()));
         System.out.print("Given preOrderTravers a binary search tree: ");
         TreeInterviewQuestions.preOrderTraverse(Setup.getBinarySearchTree());
         System.out.println();

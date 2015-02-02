@@ -1,6 +1,6 @@
 package com.company;
 
-import static com.company.util.Testing.*;
+import static com.company.Testing.*;
 
 public class Main {
 
@@ -9,7 +9,7 @@ public class Main {
         testingSearchingAlgorithms();
         mathInterviewQuestions();
         linkedListInterviewQuestions();
-        testingRecursiveAlgorithm();
+        treeInterviewQuestions();
         testingDynamicProgramming();
     }
 }

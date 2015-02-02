@@ -15,6 +15,11 @@ public class TreeInterviewQuestions {
         return node == null || !(node.val > max || node.val < min) && validateBinarySearchTree(node.left, min, node.val) && validateBinarySearchTree(node.right, node.val, max);
     }
 
+    public static int maxDepth(BinaryTreeNode root){
+        if(root == null) return 0;
+        return Math.max(maxDepth(root.right), maxDepth(root.left)+1);
+    }
+
     public static void inOrderTraverse(BinaryTreeNode node){
         if(node == null) return;
         inOrderTraverse(node.left);
