@@ -94,6 +94,7 @@ public class Testing {
         System.out.println("Given unjumpable array, canJump should return false : " + GreedyAlgorithm.canJump(arr1));
         System.out.println("Given jumpable array, canJump should return true: " + GreedyAlgorithm.canJump(arr2));
         System.out.println("Given interval array, maxClass should return 7 : " + GreedyAlgorithm.maxClass(Setup.getClassIntervals()));
+        System.out.println("Given interval array, maxClass should return 3 : " + GreedyAlgorithm.maxClass(Setup.getOtherClassIntervals()));
         System.out.println();
     }
 

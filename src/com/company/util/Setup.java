@@ -71,6 +71,7 @@ public class Setup {
     }
 
     public static Interval[] getClassIntervals(){
+        //This should return 7, for maxClass
         Interval[] result = new Interval[9];
         result[0] = new Interval(3, 4);
         result[1] = new Interval(1, 2);
@@ -81,6 +82,21 @@ public class Setup {
         result[6] = new Interval(8, 9);
         result[7] = new Interval(3, 8);
         result[8] = new Interval(20, 21);
+        return result;
+    }
+
+    public static Interval[] getOtherClassIntervals() {
+        //This should return 3, for maxClass
+        Interval[] result = new Interval[9];
+        result[0] = new Interval(3, 4);
+        result[1] = new Interval(1, 2);
+        result[2] = new Interval(5, 6);
+        result[3] = new Interval(1, 20);
+        result[4] = new Interval(5, 12);
+        result[5] = new Interval(4, 14);
+        result[6] = new Interval(3, 9);
+        result[7] = new Interval(3, 8);
+        result[8] = new Interval(1, 21);
         return result;
     }
 }
