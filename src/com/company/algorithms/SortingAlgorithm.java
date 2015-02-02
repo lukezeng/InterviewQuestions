@@ -1,5 +1,6 @@
 package com.company.algorithms;
 
+import static com.company.util.Helper.swap;
 import static java.lang.System.*;
 /**
  * Created by Luke on 1/31/2015.
@@ -9,7 +10,7 @@ public class SortingAlgorithm {
     public static void bubbleSort(int[]input){
         for (int i = 0; i < input.length-1; i++) {
             for (int j = 0; j < input.length-i-1; j++) {
-                if(input[j]>input[j+1]) Swap(input, j, j+1);
+                if(input[j]>input[j+1]) swap(input, j, j + 1);
             }
         }
     }
@@ -62,20 +63,13 @@ public class SortingAlgorithm {
         int wall = left;
         for (int i = left; i <right; i++) {
             if(input[i] < pivot){
-                Swap(input, wall, i);
+                swap(input, wall, i);
                 wall++;
             }
         }
-        Swap(input, wall, right);
+        swap(input, wall, right);
         quickSort(input, left, wall-1);
         quickSort(input, wall+1, right);
-    }
-
-    //Helpers
-    private static void Swap(int[] input, int a, int b){
-        int tmp = input[a];
-        input[a] = input[b];
-        input[b] = tmp;
     }
 }
 

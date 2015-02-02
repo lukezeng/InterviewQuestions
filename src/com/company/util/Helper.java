@@ -1,5 +1,6 @@
 package com.company.util;
 
+import com.company.dataStructures.Interval;
 import com.company.dataStructures.Node;
 
 /**
@@ -28,5 +29,28 @@ public class Helper {
             curr = curr.next;
         }
         System.out.println(curr.val);
+    }
+
+    public static void sortIntervalByEndTime(Interval[] input){
+        //This helper function is designer to sort a array of Intervals
+        //After sorting, the Interval should be ascendant by end time.
+        int len = input.length;
+        for (int i = 0; i < len-1; i++) {
+            for (int j = 0; j < len-i-1; j++) {
+                if(input[j].endTime > input[j+1].endTime) swapInterval(input, j, j+1);
+            }
+        }
+    }
+
+    public static void swap(int[] input, int a, int b){
+        int tmp = input[a];
+        input[a] = input[b];
+        input[b] = tmp;
+    }
+
+    public static void swapInterval(Interval[] input, int a, int b){
+        Interval tmp = input[a];
+        input[a] = input[b];
+        input[b] = tmp;
     }
 }

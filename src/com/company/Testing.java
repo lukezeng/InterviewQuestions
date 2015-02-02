@@ -11,7 +11,7 @@ import com.company.util.Setup;
  *
  */
 public class Testing {
-    public static void testingSortingAlgorithms(){
+    public static void sortingAlgorithms(){
         System.out.println("--------------------------------- Sorting Algorithm---------------------------------------");
         int[] arr = Setup.getRandomArray();
         Helper.printIntArray("Before sorting: \t", arr);
@@ -26,7 +26,7 @@ public class Testing {
         System.out.println();
     }
 
-    public static void testingSearchingAlgorithms(){
+    public static void SearchingAlgorithms(){
         System.out.println("--------------------------------- Searching Algorithm---------------------------------------");
         int[] arr = Setup.getSortedArray();
         SearchingAlgorithm.binarySearch(arr, 5);
@@ -85,10 +85,19 @@ public class Testing {
         System.out.println("--------------------------------- Recursive Interview Questions---------------------------------------");
         RecursiveInterviewQuestions.generateParentheses(3);
         System.out.println();
-
     }
 
-    public static void testingDynamicProgramming(){
+    public static void greedyAlgorithm(){
+        System.out.println("--------------------------------- Greedy Algorithm Interview Questions---------------------------------------");
+        int[] arr1 = {1,0,0,0,0,0};
+        int[] arr2 = {3,2,3,4,2,1};
+        System.out.println("Given unjumpable array, canJump should return false : " + GreedyAlgorithm.canJump(arr1));
+        System.out.println("Given jumpable array, canJump should return true: " + GreedyAlgorithm.canJump(arr2));
+        System.out.println("Given interval array, maxClass should return 7 : " + GreedyAlgorithm.maxClass(Setup.getClassIntervals()));
+        System.out.println();
+    }
+
+    public static void dynamicProgramming(){
         System.out.println("--------------------------------- Dynamic Programming Interview Questions---------------------------------------");
         DynamicProgramming.totalPossibleWays(10);
         DynamicProgramming.totalPossibleWays(20);

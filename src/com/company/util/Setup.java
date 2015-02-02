@@ -1,6 +1,7 @@
 package com.company.util;
 
 import com.company.dataStructures.BinaryTreeNode;
+import com.company.dataStructures.Interval;
 import com.company.dataStructures.Node;
 
 /**
@@ -67,5 +68,19 @@ public class Setup {
         BinaryTreeNode binaryTreeNode6 = new BinaryTreeNode(6, binaryTreeNode5, binaryTreeNode7);
         BinaryTreeNode binaryTreeNode4 = new BinaryTreeNode(4, binaryTreeNode2, binaryTreeNode6);
         return new BinaryTreeNode(8, binaryTreeNode4, binaryTreeNode9);
+    }
+
+    public static Interval[] getClassIntervals(){
+        Interval[] result = new Interval[9];
+        result[0] = new Interval(3, 4);
+        result[1] = new Interval(1, 2);
+        result[2] = new Interval(5, 6);
+        result[3] = new Interval(1, 20);
+        result[4] = new Interval(11, 12);
+        result[5] = new Interval(13, 14);
+        result[6] = new Interval(8, 9);
+        result[7] = new Interval(3, 8);
+        result[8] = new Interval(20, 21);
+        return result;
     }
 }
