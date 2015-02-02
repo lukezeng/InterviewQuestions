@@ -2,10 +2,7 @@ package com.company;
 
 import com.company.algorithms.SearchingAlgorithm;
 import com.company.algorithms.SortingAlgorithm;
-import com.company.interviewQuestions.DynamicProgramming;
-import com.company.interviewQuestions.LinkedListInterviewQuestions;
-import com.company.interviewQuestions.MathInterviewQuestions;
-import com.company.interviewQuestions.TreeInterviewQuestions;
+import com.company.interviewQuestions.*;
 import com.company.util.Helper;
 import com.company.util.Setup;
 
@@ -82,6 +79,13 @@ public class Testing {
         TreeInterviewQuestions.postOrderTraverse(Setup.getBinarySearchTree());
         System.out.println();
         System.out.println();
+    }
+
+    public static void recursiveInterviewQuestions(){
+        System.out.println("--------------------------------- Recursive Interview Questions---------------------------------------");
+        RecursiveInterviewQuestions.generateParentheses(3);
+        System.out.println();
+
     }
 
     public static void testingDynamicProgramming(){

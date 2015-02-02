@@ -10,6 +10,7 @@ public class Main {
         mathInterviewQuestions();
         linkedListInterviewQuestions();
         treeInterviewQuestions();
+        recursiveInterviewQuestions();
         testingDynamicProgramming();
     }
 }
