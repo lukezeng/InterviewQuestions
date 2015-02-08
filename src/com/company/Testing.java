@@ -111,6 +111,8 @@ public class Testing {
         System.out.println("Given jumpable array, canJump should return true: " + GreedyAlgorithm.canJump(arr2));
         System.out.println("Given interval array, maxClass should return 7 : " + GreedyAlgorithm.maxClass(Setup.getClassIntervals()));
         System.out.println("Given interval array, maxClass should return 3 : " + GreedyAlgorithm.maxClass(Setup.getOtherClassIntervals()));
+        System.out.println("Given sorted Integer array, trapRainWater should return 0 : " + GreedyAlgorithm.trapRainWater(Setup.getSortedArray()));
+        System.out.println("Given sorted Integer array, trapRainWater should return 0 : " + GreedyAlgorithm.trapRainWater(Setup.getRandomArray()));
         System.out.println();
     }
 

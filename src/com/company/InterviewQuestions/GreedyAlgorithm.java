@@ -13,7 +13,6 @@ import static com.company.util.Helper.*;
  *
  */
 public class GreedyAlgorithm {
-
     public static List<Interval> mergeIntervals(List<Interval> intervals) {
         if (intervals == null || intervals.size() < 2) return intervals;
         Collections.sort(intervals, new Comparator<Interval>() {
@@ -30,7 +29,6 @@ public class GreedyAlgorithm {
         }
         return intervals;
     }
-
     public static int maxClass(Interval[] input){
         sortIntervalByEndTime(input);
         int result = 1;
@@ -43,7 +41,6 @@ public class GreedyAlgorithm {
         }
         return result;
     }
-
     public static boolean canJump(int[] A) {
         int len = A.length;
         if(len == 1) return true;
@@ -54,6 +51,25 @@ public class GreedyAlgorithm {
         }
         return reachable >= len - 1;
     }
-
-
+    public static int trapRainWater(int[] input){
+        int result = 0;
+        int left = 0, right = input.length-1;
+        int min = 0;
+        while(right > left){
+            min = Math.min(input[left], input[right]);
+            if(input[left]==min){
+                while(input[left]<=min){
+                    result += min - input[left];
+                    left++;
+                }
+            }
+            if(input[right] == min){
+                while(input[right]<=min){
+                    result += min - input[right];
+                    right--;
+                }
+            }
+        }
+        return result;
+    }
 }
