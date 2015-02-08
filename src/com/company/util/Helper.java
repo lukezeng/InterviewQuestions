@@ -37,7 +37,7 @@ public class Helper {
         int len = input.length;
         for (int i = 0; i < len-1; i++) {
             for (int j = 0; j < len-i-1; j++) {
-                if(input[j].endTime > input[j+1].endTime) swapInterval(input, j, j+1);
+                if(input[j].end > input[j+1].end) swapInterval(input, j, j+1);
             }
         }
     }

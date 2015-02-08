@@ -2,6 +2,10 @@ package com.company.interviewQuestions;
 
 import com.company.dataStructures.Interval;
 
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
+
 import static com.company.util.Helper.*;
 
 /**
@@ -10,14 +14,31 @@ import static com.company.util.Helper.*;
  */
 public class GreedyAlgorithm {
 
+    public static List<Interval> mergeIntervals(List<Interval> intervals) {
+        if (intervals == null || intervals.size() < 2) return intervals;
+        Collections.sort(intervals, new Comparator<Interval>() {
+            @Override
+            public int compare(Interval a, Interval b) {
+                return a.start - b.start;
+            }
+        });
+        for (int i = 0; i < intervals.size() - 1; ) {
+            if (intervals.get(i).end >= intervals.get(i + 1).start) {
+                intervals.set(i + 1, new Interval(intervals.get(i).start, Math.max(intervals.get(i + 1).end, intervals.get(i).end)));
+                intervals.remove(i);
+            } else i++;
+        }
+        return intervals;
+    }
+
     public static int maxClass(Interval[] input){
         sortIntervalByEndTime(input);
         int result = 1;
-        int currEndTime = input[0].endTime;
+        int currEndTime = input[0].end;
         for (int i = 1; i < input.length; i++) {
-            if(input[i].startTime > currEndTime){
+            if(input[i].start > currEndTime){
                 result++;
-                currEndTime = input[i].endTime;
+                currEndTime = input[i].end;
             }
         }
         return result;

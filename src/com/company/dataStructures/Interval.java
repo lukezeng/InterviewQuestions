@@ -5,10 +5,10 @@ package com.company.dataStructures;
  *
  */
 public class Interval {
-    public int startTime;
-    public int endTime;
-    public Interval(int startTime, int endTime){
-        this.startTime = startTime;
-        this.endTime = endTime;
+    public int start;
+    public int end;
+    public Interval(int start, int endTime){
+        this.start = start;
+        this.end = endTime;
     }
 }
