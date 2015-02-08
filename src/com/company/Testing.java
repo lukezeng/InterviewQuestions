@@ -127,6 +127,10 @@ public class Testing {
         DynamicProgramming.totalPossibleWays(20);
         DynamicProgramming.buySellStock(Setup.getRandomArray());
         DynamicProgramming.buySellStock(Setup.getSortedArray());
+        DynamicProgramming.uniquePath(1,1);
+        DynamicProgramming.uniquePath(2,2);
+        DynamicProgramming.uniquePath(3,3);
+        DynamicProgramming.uniquePath(15,15);
         System.out.println();
     }
 }
