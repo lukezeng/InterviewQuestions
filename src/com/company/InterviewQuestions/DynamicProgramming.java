@@ -17,7 +17,6 @@ public class DynamicProgramming {
         System.out.println("The total possible way to climb a " + input + " stairs is " + memory[input]);
         return memory[input];
     }
-
     public static int buySellStock(int[] prices){
         int max = 0, len = prices.length, curr = 0;
         if(len==1) return 0;
@@ -32,21 +31,27 @@ public class DynamicProgramming {
         System.out.println("The maximum profit out of the array is " + max);
         return max;
     }
-
     public static int uniquePath(int m,int n){
+        //https://oj.leetcode.com/problems/unique-paths/
         int[][] result = new int[m][n];
-        for(int i = 0; i<n; i++){
-            result[0][i] = 1;
-        }
-        for(int i = 0; i < m;i++){
-            result[i][0] = 1;
-        }
-        for(int i = 1; i < m; i++){
-            for(int j = 1; j < n; j++){
-                result[i][j] = result[i-1][j] + result[i][j-1];
+        for(int i = 0; i<n; i++) result[0][i] = 1;
+        for(int i = 0; i < m;i++) result[i][0] = 1;
+        for(int i = 1; i < m; i++) {
+            for (int j = 1; j < n; j++) {
+                result[i][j] = result[i - 1][j] + result[i][j - 1];
             }
         }
         System.out.println("For a "+m+" x "+n +" matrix, a robot has " + result[m-1][n-1] + " unique ways.");
         return result[m-1][n-1];
+    }
+    public static int maxSubArray(int[] input){
+        if(input == null) return -1;
+        if(input.length == 1) return input[0];
+        int max = input[0], curr = input[0];
+        for(int i = 1; i < input.length; i++){
+            curr = Math.max(0, curr+input[i]);
+            if(curr > max) max = curr;
+        }
+        return max;
     }
 }

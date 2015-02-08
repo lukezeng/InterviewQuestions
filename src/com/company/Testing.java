@@ -123,6 +123,7 @@ public class Testing {
 
     public static void dynamicProgramming(){
         System.out.println("--------------------------------- Dynamic Programming Interview Questions---------------------------------------");
+        int[] maxSub = {-2,1,-3,4,-1,2,1,-5,4};
         DynamicProgramming.totalPossibleWays(10);
         DynamicProgramming.totalPossibleWays(20);
         DynamicProgramming.buySellStock(Setup.getRandomArray());
@@ -131,6 +132,7 @@ public class Testing {
         DynamicProgramming.uniquePath(2,2);
         DynamicProgramming.uniquePath(3,3);
         DynamicProgramming.uniquePath(15,15);
+        DynamicProgramming.maxSubArray(maxSub);
         System.out.println();
     }
 }
