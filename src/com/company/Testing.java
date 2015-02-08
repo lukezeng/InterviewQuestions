@@ -15,6 +15,7 @@ import java.util.ArrayList;
 public class Testing {
     public static void sortingAlgorithms(){
         System.out.println("--------------------------------- Sorting Algorithm---------------------------------------");
+        int[] colorArr = {1,2,0,1,2,0};
         int[] arr = Setup.getRandomArray();
         Helper.printIntArray("Before sorting: \t", arr);
         SortingAlgorithm.bubbleSort(arr);
@@ -25,6 +26,10 @@ public class Testing {
         arr = Setup.getRandomArray();
         SortingAlgorithm.quickSort(arr);
         Helper.printIntArray("After QuickSort: \t", arr);
+        SortingAlgorithm.sortColor(colorArr);
+        for(int i = 0;i<colorArr.length-1;i++){
+            System.out.print(colorArr[i] + ",");
+        }
         System.out.println();
     }
 

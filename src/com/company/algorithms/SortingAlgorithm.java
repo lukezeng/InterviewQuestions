@@ -1,7 +1,8 @@
 package com.company.algorithms;
 
+import com.company.util.Helper;
 import static com.company.util.Helper.swap;
-import static java.lang.System.*;
+import static java.lang.System.arraycopy;
 /**
  * Created by Luke on 1/31/2015.
  *
@@ -70,6 +71,21 @@ public class SortingAlgorithm {
         swap(input, wall, right);
         quickSort(input, left, wall-1);
         quickSort(input, wall+1, right);
+    }
+
+    public static void sortColor(int[] input){
+        //https://oj.leetcode.com/problems/sort-colors/
+        int zeroEnd = 0, twoStart = input.length-1;
+        for(int i = 0; i < twoStart;i++){
+            if(input[i] == 0) {
+                Helper.swap(input, i, zeroEnd);
+                zeroEnd++;
+            }
+            if(input[i]==2){
+                Helper.swap(input, i, twoStart);
+                twoStart--;
+            }
+        }
     }
 }
 
