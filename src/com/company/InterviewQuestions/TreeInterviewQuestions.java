@@ -34,7 +34,7 @@ public class TreeInterviewQuestions {
             for(BinaryTreeNode item : curr){
                 System.out.print(item.val + ",");
             }
-            System.out.println(); 
+            System.out.println();
         }
         if(node.left!= null) printPath(node.left, curr);
         if(node.right!= null) printPath(node.right, curr);
@@ -60,5 +60,15 @@ public class TreeInterviewQuestions {
         inOrderTraverse(node.left);
         inOrderTraverse(node.right);
         System.out.print(node.val + ", ");
+    }
+
+    public static BinaryTreeNode convertSortedArrayToBST(int[] input, int left, int right){
+        if(right < left) return null;
+        if(right == left) return new BinaryTreeNode(input[left]);
+        int mid = (left + right)/2;
+        BinaryTreeNode node = new BinaryTreeNode(input[mid]);
+        node.left = convertSortedArrayToBST(input, left, mid-1);
+        node.right = convertSortedArrayToBST(input, mid+1, right);
+        return node;
     }
 }
