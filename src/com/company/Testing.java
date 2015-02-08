@@ -80,6 +80,7 @@ public class Testing {
         System.out.print("Given postOrderTravers a binary search tree: ");
         TreeInterviewQuestions.postOrderTraverse(Setup.getBinarySearchTree());
         System.out.println();
+        TreeInterviewQuestions.printPath(Setup.getBinarySearchTree());
         System.out.println();
     }
 

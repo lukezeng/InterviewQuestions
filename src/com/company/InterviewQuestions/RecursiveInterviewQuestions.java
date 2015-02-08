@@ -20,7 +20,7 @@ public class RecursiveInterviewQuestions {
         ps = powerSet(input, n-1, ps);
         ArrayList<String> tmp = new ArrayList<String>();
         for(String s : ps){
-            if(s == " ") {
+            if(s.equals(" ")) {
                 tmp.add("" + input[n-1]);
             } else {
                 tmp.add(s + input[n-1]);
@@ -61,4 +61,7 @@ public class RecursiveInterviewQuestions {
         if(remainingLeft > 0) generateParentheses(remainingLeft-1, remainingRight+1, curr+"(");
         if(remainingRight > 0)  generateParentheses(remainingLeft, remainingRight - 1, curr + ")");
     }
+
+
+
 }
