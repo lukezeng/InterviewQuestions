@@ -15,6 +15,11 @@ import static com.company.util.Helper.*;
 public class GreedyAlgorithm {
     public static List<Interval> mergeIntervals(List<Interval> intervals) {
         if (intervals == null || intervals.size() < 2) return intervals;
+        System.out.print("Before mergeInterval: \t");
+        for(Interval item : intervals){
+            System.out.print("[" + item.start + "," + item.end + "]");
+        }
+        System.out.println();
         Collections.sort(intervals, new Comparator<Interval>() {
             @Override
             public int compare(Interval a, Interval b) {
@@ -27,6 +32,11 @@ public class GreedyAlgorithm {
                 intervals.remove(i);
             } else i++;
         }
+        System.out.print("After mergeInterval: \t");
+        for(Interval item : intervals){
+            System.out.print("[" + item.start + "," + item.end + "]");
+        }
+        System.out.println();
         return intervals;
     }
     public static int maxClass(Interval[] input){
@@ -54,21 +64,10 @@ public class GreedyAlgorithm {
     public static int trapRainWater(int[] input){
         int result = 0;
         int left = 0, right = input.length-1;
-        int min = 0;
         while(right > left){
-            min = Math.min(input[left], input[right]);
-            if(input[left]==min){
-                while(input[left]<=min){
-                    result += min - input[left];
-                    left++;
-                }
-            }
-            if(input[right] == min){
-                while(input[right]<=min){
-                    result += min - input[right];
-                    right--;
-                }
-            }
+            int min = Math.min(input[left], input[right]);
+            if(input[left]==min) while (input[left] <= min) result += min - input[left++];
+            if(input[right] == min) while (input[right] <= min) result += min - input[right--];
         }
         return result;
     }

@@ -9,6 +9,7 @@ public class Main {
         SearchingAlgorithms();
         mathInterviewQuestions();
         linkedListInterviewQuestions();
+        stringInterviewQuestions();
         treeInterviewQuestions();
         recursiveInterviewQuestions();
         greedyAlgorithm();

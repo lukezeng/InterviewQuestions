@@ -4,6 +4,9 @@ import com.company.dataStructures.BinaryTreeNode;
 import com.company.dataStructures.Interval;
 import com.company.dataStructures.Node;
 
+import java.util.LinkedList;
+import java.util.List;
+
 /**
  * Created by Luke on 1/31/2015.
  *
@@ -97,6 +100,22 @@ public class Setup {
         result[6] = new Interval(3, 9);
         result[7] = new Interval(3, 8);
         result[8] = new Interval(1, 21);
+        return result;
+    }
+
+    public static List<Interval> getIntervalsArrayList() {
+        //This should return 3, for maxClass
+        List<Interval> result = new LinkedList<Interval>();
+        result.add(new Interval(3, 4));
+        result.add(new Interval(1, 2));
+        result.add(new Interval(5, 6));
+        result.add(new Interval(1, 20));
+        result.add(new Interval(5, 12));
+        result.add(new Interval(4, 14));
+        result.add(new Interval(3, 9));
+        result.add(new Interval(3, 8));
+        result.add(new Interval(30, 90));
+        result.add(new Interval(1, 21));
         return result;
     }
 }

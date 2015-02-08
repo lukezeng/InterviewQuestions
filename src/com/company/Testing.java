@@ -5,7 +5,6 @@ import com.company.algorithms.SortingAlgorithm;
 import com.company.interviewQuestions.*;
 import com.company.util.Helper;
 import com.company.util.Setup;
-
 import java.util.ArrayList;
 
 /**
@@ -71,6 +70,15 @@ public class Testing {
         System.out.println();
     }
 
+    public static void stringInterviewQuestions(){
+        System.out.println("--------------------------------- LinkedList Interview Questions---------------------------------------");
+        StringInterviewQuestions.countAndSay("aaabbbbbbbbbc");
+        StringInterviewQuestions.countAndSay("aaabbbbbbbbb");
+        StringInterviewQuestions.countAndSay("33334444455555");
+        StringInterviewQuestions.countAndSay("3344556667777");
+        System.out.println();
+    }
+
     public static void treeInterviewQuestions(){
         System.out.println("--------------------------------- Tree Interview Questions---------------------------------------");
         System.out.println("Given binary search tree, validateBinarySearchTree is returning: " + TreeInterviewQuestions.validateBinarySearchTree(Setup.getBinarySearchTree()));
@@ -116,8 +124,9 @@ public class Testing {
         System.out.println("Given jumpable array, canJump should return true: " + GreedyAlgorithm.canJump(arr2));
         System.out.println("Given interval array, maxClass should return 7 : " + GreedyAlgorithm.maxClass(Setup.getClassIntervals()));
         System.out.println("Given interval array, maxClass should return 3 : " + GreedyAlgorithm.maxClass(Setup.getOtherClassIntervals()));
-        System.out.println("Given sorted Integer array, trapRainWater should return 0 : " + GreedyAlgorithm.trapRainWater(Setup.getSortedArray()));
-        System.out.println("Given sorted Integer array, trapRainWater should return 0 : " + GreedyAlgorithm.trapRainWater(Setup.getRandomArray()));
+        GreedyAlgorithm.mergeIntervals(Setup.getIntervalsArrayList());
+        System.out.println("Given sorted Integer array, trapRainWater should return should 0 : " + GreedyAlgorithm.trapRainWater(Setup.getSortedArray()));
+        System.out.println("Given sorted Integer array, trapRainWater should return should 27 : " + GreedyAlgorithm.trapRainWater(Setup.getRandomArray()));
         System.out.println();
     }
 
