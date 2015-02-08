@@ -76,6 +76,7 @@ public class Testing {
         StringInterviewQuestions.countAndSay("aaabbbbbbbbb");
         StringInterviewQuestions.countAndSay("33334444455555");
         StringInterviewQuestions.countAndSay("3344556667777");
+        StringInterviewQuestions.countAndSay(3);
         System.out.println();
     }
 

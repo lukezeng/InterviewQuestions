@@ -5,11 +5,19 @@ package com.company.interviewQuestions;
  *
  */
 public class StringInterviewQuestions {
+    public static String countAndSay(int input){
+        //https://oj.leetcode.com/problems/count-and-say/
+        String result = "1";
+        for (int i = 0; i < input; i++) {
+            result = countAndSay(result);
+        }
+        return result;
+    }
+
     public static String countAndSay(String input){
+        //https://oj.leetcode.com/problems/count-and-say/
         if(input == null) return null;
-        if(input.length() == 1) return input;
         StringBuilder result = new StringBuilder();
-        int ptr = 0;
         int count = 1;
         for (int i = 1; i < input.length(); i++) {
             if(input.charAt(i-1)==input.charAt(i)){
