@@ -6,6 +6,8 @@ import com.company.interviewQuestions.*;
 import com.company.util.Helper;
 import com.company.util.Setup;
 
+import java.util.ArrayList;
+
 /**
  * Created by Luke on 1/31/2015.
  *
@@ -84,6 +86,17 @@ public class Testing {
     public static void recursiveInterviewQuestions(){
         System.out.println("--------------------------------- Recursive Interview Questions---------------------------------------");
         RecursiveInterviewQuestions.generateParentheses(3);
+        System.out.println();
+        int[] input = {1,2,3};
+        ArrayList<String> powerSet = RecursiveInterviewQuestions.powerSet(input);
+        for(String s:powerSet){
+            System.out.print("{" + s + "}, ");
+        }
+        System.out.println();
+        ArrayList<String> stringPermutation = RecursiveInterviewQuestions.permutation("abc");
+        for(String s:stringPermutation){
+            System.out.print(s + ", ");
+        }
         System.out.println();
     }
 
