@@ -8,7 +8,7 @@ import java.util.Hashtable;
  */
 
 public class LRUCache {
-    
+
     private Hashtable<Integer, DLinkedNode>
             cache = new Hashtable<Integer, DLinkedNode>();
     private int count;
@@ -16,7 +16,7 @@ public class LRUCache {
     private DLinkedNode head, tail;
 
     public LRUCache(int capacity) {
-        this.count = 0;
+        count = 0;
         this.capacity = capacity;
 
         head = new DLinkedNode();
@@ -37,7 +37,7 @@ public class LRUCache {
         }
 
         // move the accessed node to the head;
-        this.moveToHead(node);
+        moveToHead(node);
 
         return node.value;
     }

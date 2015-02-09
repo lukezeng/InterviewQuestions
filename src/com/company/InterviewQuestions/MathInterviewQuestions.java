@@ -38,4 +38,17 @@ public class MathInterviewQuestions {
         System.out.println("We found the square root of " + x + " is " + mid);
         return mid;
     }
+
+    public static int divided(int input,int divider){
+        if(divider == 0) return -1;
+        if(input < 0 && divider < 0) return divided(-input, -divider);
+        if(input<0) return -divided(-input, divider);
+        if(divider<0) return -divided(input, -divider);
+        int result = 0;
+        while(input > 0) {
+            input -= divider;
+            result++;
+        }
+        return result;
+    }
 }

@@ -57,6 +57,11 @@ public class Testing {
         System.out.println("2 to the 3rd power is : " + MathInterviewQuestions.pow(2, 3));
         System.out.println("2 to the 4th power is : " + MathInterviewQuestions.pow(2, 4));
         System.out.println("2 to the 10th power is : " + MathInterviewQuestions.pow(2, 10));
+        System.out.println("2 to the 10th power is : " + MathInterviewQuestions.pow(2, 10));
+        System.out.println("10 divided by 5 is : " + MathInterviewQuestions.divided(10, 5));
+        System.out.println("-15 divided by 5 is : " + MathInterviewQuestions.divided(-15, 5));
+        System.out.println("10 divided by -2 is : " + MathInterviewQuestions.divided(10, -2));
+        System.out.println("10 divided by 0 is : " + MathInterviewQuestions.divided(10, 0));
         System.out.println();
     }
 
