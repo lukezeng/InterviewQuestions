@@ -1,5 +1,7 @@
 package com.company.interviewQuestions;
 
+import java.util.ArrayList;
+
 /**
  * Created by Luke on 2/1/2015.
  *
@@ -53,5 +55,45 @@ public class DynamicProgramming {
             if(curr > max) max = curr;
         }
         return max;
+    }
+    public static int longestIncreaseSubsequence(int[] input){
+        int[] memory = new int[input.length];
+        memory[0] = 1;
+        int max = 1;
+        for (int i = 1; i < input.length; i++) {
+            for (int j = 0; j < i; j++) {
+                if(input[i] > input[j] && memory[i] < memory[j]+1){
+                    memory[i]=memory[j]+1;
+                    if(memory[i]> max) max = memory[i];
+                }
+            }
+        }
+        return max;
+    }
+    public static int longestCommonSubstring(String a, String b){
+        a = " "+a;
+        b = " "+b;
+        int[][] memory = new int[a.length()][b.length()];
+        for (int i = 0; i < a.length(); i++) {
+            for(int j = 0; j < b.length(); j++){
+                memory[i][j] = 0;
+            }
+        }
+        for (int i = 1; i < a.length(); i++) {
+            for(int j = 1; j < b.length(); j++){
+                if(a.charAt(i)==b.charAt(j)){
+                    memory[i][j] = memory[i-1][j-1]+1;
+                } else {
+                    memory[i][j] = Math.max(memory[i-1][j],memory[i][j-1]);
+                }
+            }
+        }
+        for (int i = 0; i < a.length(); i++) {
+            for(int j = 0; j < b.length(); j++){
+                System.out.print(memory[i][j] + ",");
+            }
+            System.out.println();
+        }
+        return memory[a.length()-1][b.length()-1];
     }
 }

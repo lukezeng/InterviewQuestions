@@ -99,9 +99,10 @@ public class Testing {
         System.out.print("Given postOrderTravers a binary search tree: ");
         TreeInterviewQuestions.postOrderTraverse(Setup.getBinarySearchTree());
         System.out.println();
-        TreeInterviewQuestions.printPath(TreeInterviewQuestions.convertSortedArrayToBST(Setup.getSortedArray(), 0, Setup.getSortedArray().length-1));
+        TreeInterviewQuestions.printPath(TreeInterviewQuestions.convertSortedArrayToBST(Setup.getSortedArray(), 0, Setup.getSortedArray().length - 1));
         System.out.println();
         TreeInterviewQuestions.printPath(Setup.getBinarySearchTree());
+        TreeInterviewQuestions.commonAncestor(Setup.getBinarySearchTree(), 1, 3);
         System.out.println();
     }
 
@@ -143,11 +144,13 @@ public class Testing {
         DynamicProgramming.totalPossibleWays(20);
         DynamicProgramming.buySellStock(Setup.getRandomArray());
         DynamicProgramming.buySellStock(Setup.getSortedArray());
-        DynamicProgramming.uniquePath(1,1);
+        DynamicProgramming.uniquePath(1, 1);
         DynamicProgramming.uniquePath(2,2);
         DynamicProgramming.uniquePath(3,3);
         DynamicProgramming.uniquePath(15,15);
         DynamicProgramming.maxSubArray(maxSub);
+        System.out.println(DynamicProgramming.longestIncreaseSubsequence(maxSub));
+        System.out.println(DynamicProgramming.longestCommonSubstring("ACCGGGTTAC", "AGGACCA"));
         System.out.println();
     }
 }

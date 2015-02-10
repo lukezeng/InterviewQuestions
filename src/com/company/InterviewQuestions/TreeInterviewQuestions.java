@@ -71,4 +71,17 @@ public class TreeInterviewQuestions {
         node.right = convertSortedArrayToBST(input, mid+1, right);
         return node;
     }
+
+    public static BinaryTreeNode commonAncestor(BinaryTreeNode root, int p, int q){
+        if(covers(root.left, p)&&covers(root.left, q)) return commonAncestor(root.left, p, q);
+        if(covers(root.right, p)&&covers(root.right, q)) return commonAncestor(root.right, p, q);
+        System.out.println("We found the common ancestor of " + p + " and " + q + " is " + root.val);
+        return root;
+    }
+
+    private static boolean covers(BinaryTreeNode node, int target){
+        if(node == null) return false;
+        if(node.val == target) return true;
+        return covers(node.left, target) || covers(node.right, target);
+    }
 }
