@@ -1,4 +1,4 @@
-package com.company.interviewQuestions;
+package com.company.Questions;
 
 /**
  * Created by Luke on 2/8/2015.

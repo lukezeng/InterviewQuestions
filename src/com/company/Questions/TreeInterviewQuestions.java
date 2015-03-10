@@ -1,4 +1,4 @@
-package com.company.interviewQuestions;
+package com.company.Questions;
 
 import com.company.dataStructures.BinaryTreeNode;
 
@@ -79,9 +79,7 @@ public class TreeInterviewQuestions {
         return root;
     }
 
-    private static boolean covers(BinaryTreeNode node, int target){
-        if(node == null) return false;
-        if(node.val == target) return true;
-        return covers(node.left, target) || covers(node.right, target);
+    private static boolean covers(BinaryTreeNode node, int target) {
+        return node != null && (node.val == target || covers(node.left, target) || covers(node.right, target));
     }
 }

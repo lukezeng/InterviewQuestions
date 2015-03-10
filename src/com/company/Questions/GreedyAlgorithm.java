@@ -1,4 +1,4 @@
-package com.company.interviewQuestions;
+package com.company.Questions;
 
 import com.company.dataStructures.Interval;
 
@@ -6,7 +6,7 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-import static com.company.util.Helper.*;
+import static com.company.util.Helper.sortIntervalByEndTime;
 
 /**
  * Created by Luke on 2/1/2015.

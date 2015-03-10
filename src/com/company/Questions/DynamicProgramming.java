@@ -1,6 +1,4 @@
-package com.company.interviewQuestions;
-
-import java.util.ArrayList;
+package com.company.Questions;
 
 /**
  * Created by Luke on 2/1/2015.
