@@ -1,10 +1,11 @@
 package com.company;
 
+import com.company.Questions.*;
 import com.company.algorithms.SearchingAlgorithm;
 import com.company.algorithms.SortingAlgorithm;
-import com.company.interviewQuestions.*;
 import com.company.util.Helper;
 import com.company.util.Setup;
+
 import java.util.ArrayList;
 
 /**

@@ -1,4 +1,4 @@
-package com.company.interviewQuestions;
+package com.company.Questions;
 
 import java.util.Hashtable;
 
@@ -71,17 +71,10 @@ public class LRUCache {
 
     }
 
-    class DLinkedNode {
-        int key;
-        int value;
-        DLinkedNode pre;
-        DLinkedNode post;
-    }
-
     /**
      * Always add the new node right after head;
      */
-    private void addNode(DLinkedNode node){
+    private void addNode(DLinkedNode node) {
         node.pre = head;
         node.post = head.post;
 
@@ -92,7 +85,7 @@ public class LRUCache {
     /**
      * Remove an existing node from the linked list.
      */
-    private void removeNode(DLinkedNode node){
+    private void removeNode(DLinkedNode node) {
         DLinkedNode pre = node.pre;
         DLinkedNode post = node.post;
 
@@ -113,5 +106,12 @@ public class LRUCache {
         DLinkedNode res = tail.pre;
         this.removeNode(res);
         return res;
+    }
+
+    class DLinkedNode {
+        int key;
+        int value;
+        DLinkedNode pre;
+        DLinkedNode post;
     }
 }
