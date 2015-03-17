@@ -76,15 +76,17 @@ public class SortingAlgorithm {
     public static void sortColor(int[] input){
         //https://oj.leetcode.com/problems/sort-colors/
         int zeroEnd = 0, twoStart = input.length-1;
-        for(int i = 0; i < twoStart;i++){
+        for(int i = 0; i <= twoStart;){
             if(input[i] == 0) {
                 Helper.swap(input, i, zeroEnd);
                 zeroEnd++;
-            }
-            if(input[i]==2){
+		i++;
+            }else if(input[i]==2){
                 Helper.swap(input, i, twoStart);
                 twoStart--;
-            }
+            }else {
+		i++;
+	    }
         }
     }
 }
