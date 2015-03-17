@@ -33,7 +33,7 @@ public class Testing {
         System.out.println();
     }
 
-    public static void SearchingAlgorithms(){
+    public static void searchingAlgorithms(){
         System.out.println("--------------------------------- Searching Algorithm---------------------------------------");
         int[] arr = Setup.getSortedArray();
         SearchingAlgorithm.binarySearch(arr, 5);
