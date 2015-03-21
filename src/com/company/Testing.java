@@ -154,4 +154,11 @@ public class Testing {
         System.out.println(DynamicProgramming.longestCommonSubstring("ACCGGGTTAC", "AGGACCA"));
         System.out.println();
     }
+
+    public static void arrayInterviewQuestions() {
+        System.out.println("--------------------------------------- Array Interview Questions ---------------------------------------------");
+        ArrayInterviewQuestions.singleNumber(new int[] {2,2,1,3,1,4,4,4,3,2,3,1});
+        System.out.println();
+        ArrayInterviewQuestions.productOfIntegerInArray(new int[]{1,2,6,5,9});
+    }
 }

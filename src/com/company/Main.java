@@ -12,5 +12,6 @@ public class Main {
         recursiveInterviewQuestions();
         greedyAlgorithm();
         dynamicProgramming();
+        arrayInterviewQuestions();
     }
 }
