@@ -94,4 +94,21 @@ public class DynamicProgramming {
         }
         return memory[a.length()-1][b.length()-1];
     }
+
+    public static int numDecodings(String s) {
+        //https://leetcode.com/problems/decode-ways/
+        if(s.length()==0) return 0;
+        int n = s.length();
+        int[] ways = new int[n+1];
+        ways[n] = 1;
+        ways[n-1] = s.charAt(n-1)=='0' ? 0 : 1;
+        for(int i=n-2; i>=0; i--) {
+            if(s.charAt(i)=='0') continue; //zero must be combined with the next number
+            //ways[i+1] --> add current letter without combining the previous number
+            //ways[i+2] --> add current letter by combining with previous number
+            ways[i] = Integer.parseInt(s.substring(i, i+2))<=26 ? (ways[i+1]+ways[i+2]) : ways[i+1];
+        }
+        System.out.println("There are "+ways[0]+" ways to decode string "+s);
+        return ways[0];
+    }
 }

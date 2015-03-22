@@ -153,6 +153,7 @@ public class Testing {
         System.out.println(DynamicProgramming.longestIncreaseSubsequence(maxSub));
         System.out.println(DynamicProgramming.longestCommonSubstring("ACCGGGTTAC", "AGGACCA"));
         System.out.println();
+        DynamicProgramming.numDecodings("1212");
     }
 
     public static void arrayInterviewQuestions() {
