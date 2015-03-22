@@ -160,5 +160,12 @@ public class Testing {
         ArrayInterviewQuestions.singleNumber(new int[] {2,2,1,3,1,4,4,4,3,2,3,1});
         System.out.println();
         ArrayInterviewQuestions.productOfIntegerInArray(new int[]{1,2,6,5,9});
+        System.out.println();
+        ArrayInterviewQuestions.firstMissingPositive(new int[] {3,4,-1,1});
+        System.out.println();
+        ArrayInterviewQuestions.largestRectangleArea(new int[] {2,3,3,4,5});
+        ArrayInterviewQuestions.largestRectangleArea(new int[] {5,4,3,3,2});
+        System.out.println();
+        ArrayInterviewQuestions.longestConsecutive(new int[] {100,4,200,1,3,2});
     }
 }
