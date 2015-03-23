@@ -145,6 +145,7 @@ public class Testing {
         DynamicProgramming.totalPossibleWays(20);
         DynamicProgramming.buySellStock(Setup.getRandomArray());
         DynamicProgramming.buySellStock(Setup.getSortedArray());
+        DynamicProgramming.buySellStockI(Setup.getSortedArray());
         DynamicProgramming.uniquePath(1, 1);
         DynamicProgramming.uniquePath(2,2);
         DynamicProgramming.uniquePath(3,3);
@@ -154,6 +155,8 @@ public class Testing {
         System.out.println(DynamicProgramming.longestCommonSubstring("ACCGGGTTAC", "AGGACCA"));
         System.out.println();
         DynamicProgramming.numDecodings("1212");
+        System.out.println();
+        DynamicProgramming.calculateMinimumHP(Setup.getDungeonRooms());
     }
 
     public static void arrayInterviewQuestions() {

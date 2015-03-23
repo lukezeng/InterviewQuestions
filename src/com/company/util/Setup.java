@@ -118,4 +118,12 @@ public class Setup {
         result.add(new Interval(1, 21));
         return result;
     }
+
+    public static int[][] getDungeonRooms() {
+        int[][] matrix = new int[3][];
+        matrix[0] = new int[] {-2, -3, 3};
+        matrix[1] = new int[] {-5, -10, 1};
+        matrix[2] = new int[] {10, 30, -5};
+        return matrix;
+    }
 }
