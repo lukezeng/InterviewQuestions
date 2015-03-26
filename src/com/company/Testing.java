@@ -157,6 +157,9 @@ public class Testing {
         DynamicProgramming.numDecodings("1212");
         System.out.println();
         DynamicProgramming.calculateMinimumHP(Setup.getDungeonRooms());
+        System.out.println();
+        DynamicProgramming.isInterleave("aabcc","dbbca","aadbbcbcac");
+        DynamicProgramming.isInterleave("aabcc","dbbca","aadbbbaccc");
     }
 
     public static void arrayInterviewQuestions() {
