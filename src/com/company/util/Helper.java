@@ -1,6 +1,6 @@
 package com.company.util;
 
-import java.util.ArrayList;
+import java.util.List;
 
 import com.company.dataStructures.Interval;
 import com.company.dataStructures.Node;
@@ -33,12 +33,14 @@ public class Helper {
         System.out.println(curr.val);
     }
 
-    public static void printArrayList(String prefix, ArrayList<Integer> list) {
+    public static void printArrayList(String prefix, List<Integer> list) {
         System.out.print(prefix);
+        int n = list.size();
         System.out.print(" [");
-        for(int num: list) {
-            System.out.print(num+",");
+        for(int i=0; i<n-1; i++) {
+            System.out.print(list.get(i)+",");
         }
+        System.out.print(list.get(n-1));
         System.out.println("]");
     }
 

@@ -2,6 +2,7 @@ package com.company.Questions;
 
 import com.company.util.Helper;
 
+import java.util.List;
 import java.util.ArrayList;
 /**
  * Created by Luke on 2/1/2015.
@@ -84,5 +85,32 @@ public class MathInterviewQuestions {
         findGray(n-1, x, false, res);
         int y = num | digit[1]<<n-1;
         findGray(n-1, y, true, res);
+    }
+
+    /**
+     * Combination k out of n
+     */
+    public static List<List<Integer>> combine(int n, int k) {
+        //https://leetcode.com/problems/combinations/
+        List<List<Integer>> res = new ArrayList<List<Integer>>();
+        if(n==0 || k==0) return res;
+        List<Integer> list = new ArrayList<Integer>();
+        findComb(n, k, 1, list, res);
+        System.out.println("Combination k="+k+" out of n="+n);
+        for(List<Integer> l: res) {
+            Helper.printArrayList(" ", l);
+        }
+        return res;
+    }
+    private static void findComb(int n, int k, int start, List<Integer> list, List<List<Integer>> res) {
+        for(int i=start; i<=n; i++) {
+            List<Integer> copy = new ArrayList<Integer>(list);
+            copy.add(i);
+            if(k==1) {
+                res.add(copy);
+            }else {
+                findComb(n, k-1, i+1, copy, res);
+            }
+        }
     }
 }

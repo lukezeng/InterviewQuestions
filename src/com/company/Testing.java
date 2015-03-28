@@ -66,6 +66,8 @@ public class Testing {
         System.out.println();
         MathInterviewQuestions.grayCode(2);
         MathInterviewQuestions.grayCode(3);
+        System.out.println();
+        MathInterviewQuestions.combine(4,2);
     }
 
     public static void linkedListInterviewQuestions(){
