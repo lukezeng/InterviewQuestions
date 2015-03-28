@@ -19,6 +19,19 @@ public class MathInterviewQuestions {
         }
     }
 
+    /**
+     * Handle the case when power is negative
+     */
+    public static double pow(double base, int power) {
+        if(power==0) return 1;
+        double val = pow(base, power/2);
+        if(power%2==0) return val * val;
+        if(power > 0)
+            return val * val * base;
+        else
+            return val * val / base;
+    }
+
     public static double squareRoot(double x){
         if(x < 0) return -1;
         if(x == 0 || x == 1) return x;
@@ -41,6 +54,22 @@ public class MathInterviewQuestions {
         }
         System.out.println("We found the square root of " + x + " is " + mid);
         return mid;
+    }
+
+    /**
+     * bit manipulation of square root
+     */
+    public static int sqrt(int x) {
+        long ans = 0;
+        long bit = (1L<<15);
+        while(bit > 0) {
+            ans |= bit;
+            if(ans * ans > x)
+                ans ^= bit;
+            bit >>= 1;
+        }
+        System.out.println("We found the square root of " + x + " is (int)" + ans);
+        return (int)ans;
     }
 
     public static int divided(int input,int divider){
