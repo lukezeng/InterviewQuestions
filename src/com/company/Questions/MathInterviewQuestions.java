@@ -1,5 +1,8 @@
 package com.company.Questions;
 
+import com.company.util.Helper;
+
+import java.util.ArrayList;
 /**
  * Created by Luke on 2/1/2015.
  *
@@ -50,5 +53,36 @@ public class MathInterviewQuestions {
             result++;
         }
         return result;
+    }
+
+    /**
+     * Find Gray Code
+     * Backtracking, recursive
+     * Runtime O(2^n) Space O(1)
+     * @param n
+     * @return
+     */
+    public static ArrayList<Integer> grayCode(int n) {
+        //https://leetcode.com/problems/gray-code/
+        ArrayList<Integer> res = new ArrayList<Integer>();
+        int num = 0;
+        findGray(n, num, false, res);
+        Helper.printArrayList("The gray code sequence when n=" + n, res);
+        return res;
+    }
+    private static void findGray(int n, int num, boolean flip, ArrayList<Integer> res) {
+        if(n==0) {
+            res.add(num);
+            return;
+        }
+        int[] digit = new int[] {0,1};
+        if(flip) {
+            digit[0] = 1;
+            digit[1] = 0;
+        }
+        int x = num | digit[0]<<n-1;
+        findGray(n-1, x, false, res);
+        int y = num | digit[1]<<n-1;
+        findGray(n-1, y, true, res);
     }
 }

@@ -64,6 +64,8 @@ public class Testing {
         System.out.println("10 divided by -2 is : " + MathInterviewQuestions.divided(10, -2));
         System.out.println("10 divided by 0 is : " + MathInterviewQuestions.divided(10, 0));
         System.out.println();
+        MathInterviewQuestions.grayCode(2);
+        MathInterviewQuestions.grayCode(3);
     }
 
     public static void linkedListInterviewQuestions(){

@@ -1,5 +1,7 @@
 package com.company.util;
 
+import java.util.ArrayList;
+
 import com.company.dataStructures.Interval;
 import com.company.dataStructures.Node;
 
@@ -29,6 +31,15 @@ public class Helper {
             curr = curr.next;
         }
         System.out.println(curr.val);
+    }
+
+    public static void printArrayList(String prefix, ArrayList<Integer> list) {
+        System.out.print(prefix);
+        System.out.print(" [");
+        for(int num: list) {
+            System.out.print(num+",");
+        }
+        System.out.println("]");
     }
 
     public static void sortIntervalByEndTime(Interval[] input){
