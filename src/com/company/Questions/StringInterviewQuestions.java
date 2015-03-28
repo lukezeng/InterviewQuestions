@@ -1,5 +1,11 @@
 package com.company.Questions;
 
+import com.company.util.Helper;
+
+import java.util.Arrays;
+import java.util.ArrayList;
+import java.util.HashMap;
+
 /**
  * Created by Luke on 2/8/2015.
  *
@@ -30,5 +36,30 @@ public class StringInterviewQuestions {
         result.append(count).append(input.charAt(input.length()-1));
         System.out.println("countAndSay converted string " + input + " to " + result.toString());
         return result.toString();
+    }
+
+    /**
+     * Runtime O(n), Space O(n)
+     */
+    public static ArrayList<String> anagrams(String[] strs) {
+        //https://leetcode.com/problems/anagrams/
+        HashMap<String, String> pairs = new HashMap<String, String>();
+        HashMap<String, String> remain = new HashMap<String, String>();
+        ArrayList<String> list = new ArrayList<String>();
+        for(String str: strs) {
+            char[] key = str.toCharArray();
+            Arrays.sort(key);
+            if(key.length==0) //handle empty string, use null as key in hash map
+                key = null;
+            String k = (key!=null) ? new String(key) : null;
+            String preStr = pairs.put(k, str);
+            if(preStr != null) {
+                list.add(preStr);
+                remain.put(k, str);
+            }
+        }
+        list.addAll(remain.values());
+        Helper.printStringList("Anagrams strings are: ", list);
+        return list;
     }
 }

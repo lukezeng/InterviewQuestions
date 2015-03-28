@@ -90,6 +90,8 @@ public class Testing {
         StringInterviewQuestions.countAndSay("3344556667777");
         StringInterviewQuestions.countAndSay(3);
         System.out.println();
+        StringInterviewQuestions.anagrams(new String[] {"",""});
+        StringInterviewQuestions.anagrams(new String[] {"dog","cat","god","tac","bug"});
     }
 
     public static void treeInterviewQuestions(){

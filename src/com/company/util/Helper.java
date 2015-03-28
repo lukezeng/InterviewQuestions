@@ -44,6 +44,17 @@ public class Helper {
         System.out.println("]");
     }
 
+    public static void printStringList(String prefix, List<String> list) {
+        System.out.print(prefix);
+        int n = list.size();
+        System.out.print(" {");
+        for(int i=0; i<n-1; i++) {
+            System.out.print("'"+list.get(i)+"',");
+        }
+        System.out.print("'"+list.get(n-1)+"'");
+        System.out.println("}");
+    }
+
     public static void sortIntervalByEndTime(Interval[] input){
         //This helper function is designer to sort a array of Intervals
         //After sorting, the Interval should be ascendant by end time.
