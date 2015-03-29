@@ -4,6 +4,7 @@ import com.company.util.Helper;
 
 import java.util.List;
 import java.util.ArrayList;
+import java.util.HashMap;
 /**
  * Created by Luke on 2/1/2015.
  *
@@ -141,5 +142,40 @@ public class MathInterviewQuestions {
                 findComb(n, k-1, i+1, copy, res);
             }
         }
+    }
+
+    public static String fractionToDecimal(int numerator, int denominator) {
+        //https://leetcode.com/problems/fraction-to-recurring-decimal/
+        if(numerator==0)
+            return "0";
+        StringBuilder res = new StringBuilder();
+        //append sign + or -
+        res.append((numerator > 0) ^ (denominator > 0) ? "-" : "");
+        //convert to long in order to avoid overflow during abs
+        long num = Math.abs((long)numerator);
+        long den = Math.abs((long)denominator);
+        //integral part
+        res.append(num/den);
+        num %= den;
+        if(num == 0) return res.toString();
+        //decimal part
+        res.append(".");
+        //Use hashmap to track possible repeat decimal number. Key is the reminder, value is the start position of possible repeat number
+        HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
+        while(num > 0) {
+            map.put((int)num, res.length());
+            num *= 10;
+            res.append(num / den);
+            num %= den;
+            Integer index = map.get((int)num);
+            if(index!=null) {
+                //find the repeat pattern
+                res.insert(index, "(");
+                res.append(")");
+                break;
+            }
+        }
+        System.out.println(numerator+"/"+denominator+" = "+res.toString());
+        return res.toString();
     }
 }

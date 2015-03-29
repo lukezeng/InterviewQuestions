@@ -69,7 +69,9 @@ public class Testing {
         MathInterviewQuestions.grayCode(2);
         MathInterviewQuestions.grayCode(3);
         System.out.println();
-        MathInterviewQuestions.combine(4,2);
+        MathInterviewQuestions.combine(4, 2);
+        System.out.println();
+        MathInterviewQuestions.fractionToDecimal(1,33);
     }
 
     public static void linkedListInterviewQuestions(){
