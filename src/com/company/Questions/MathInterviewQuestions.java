@@ -2,6 +2,7 @@ package com.company.Questions;
 
 import com.company.util.Helper;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -177,5 +178,33 @@ public class MathInterviewQuestions {
         }
         System.out.println(numerator+"/"+denominator+" = "+res.toString());
         return res.toString();
+    }
+
+    /**
+     * Remember the busy columns and diagonals and recursively try to put the queen into the next row
+     */
+    public static List<String[]> solveNQueens(int n) {
+        //https://leetcode.com/problems/n-queens/
+        List<String[]> res = new ArrayList<String[]>();
+        placeQueen(0, new boolean[n], new boolean[2*n], new boolean[2*n], new String[n], res);
+        System.out.println("Total number of distinct N-Queens solutions are "+res.size());
+        return res;
+    }
+    private static void placeQueen(int r, boolean[] cols, boolean[] d1, boolean[] d2, String[] board, List<String[]> res) {
+        if(r==board.length)
+            res.add(board.clone());
+        else {
+            for(int c=0; c<board.length; c++) {
+                int idx1 = r-c+board.length, idx2 = 2*board.length-r-c-1; //idx1 tracks diagonal index, idx2 tracks clinodiagoal index
+                if(!cols[c] && !d1[idx1] && !d2[idx2]) {
+                    char[] row = new char[board.length];
+                    Arrays.fill(row, '.'); row[c] = 'Q';
+                    board[r] = new String(row);
+                    cols[c] = true; d1[idx1] = true; d2[idx2] = true;
+                    placeQueen(r+1, cols, d1, d2, board, res);
+                    cols[c] = false; d1[idx1] = false; d2[idx2] = false;
+                }
+            }
+        }
     }
 }

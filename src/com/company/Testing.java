@@ -72,6 +72,8 @@ public class Testing {
         MathInterviewQuestions.combine(4, 2);
         System.out.println();
         MathInterviewQuestions.fractionToDecimal(1,33);
+        System.out.println();
+        MathInterviewQuestions.solveNQueens(4);
     }
 
     public static void linkedListInterviewQuestions(){
