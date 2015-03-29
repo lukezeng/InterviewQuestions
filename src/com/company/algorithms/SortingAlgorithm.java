@@ -3,6 +3,8 @@ package com.company.algorithms;
 import com.company.util.Helper;
 import static com.company.util.Helper.swap;
 import static java.lang.System.arraycopy;
+import java.util.Arrays;
+
 /**
  * Created by Luke on 1/31/2015.
  *
@@ -88,6 +90,49 @@ public class SortingAlgorithm {
 		i++;
 	    }
         }
+    }
+
+    /**
+     * Bucket Sort
+     * Runtime O(n) Space O(n)
+     */
+    public static int maximumGap(int[] num) {
+        //https://leetcode.com/problems/maximum-gap/
+        int n = num.length;
+        if(n<=1) return 0;
+        int min = Integer.MAX_VALUE, max = Integer.MIN_VALUE;
+        for(int i=0; i<n; i++) {
+            min = Math.min(min, num[i]);
+            max = Math.max(max, num[i]);
+        }
+        //minimum gap
+        int gap = (int)Math.ceil((double)(max-min) / (n-1));
+        //n-1 buckets
+        int[] bucket_min = new int[n-1];//store min value in each bucket
+        int[] bucket_max = new int[n-1]; //store max value in each bucket
+        Arrays.fill(bucket_min, Integer.MAX_VALUE);
+        Arrays.fill(bucket_max, Integer.MIN_VALUE);
+        //fill the elements into bucket
+        for(int d: num) {
+            if(d==min || d==max)
+                continue;
+            int idx = (d-min) / gap; //get the bucket index
+            bucket_min[idx] = Math.min(d, bucket_min[idx]);
+            bucket_max[idx] = Math.max(d, bucket_max[idx]);
+        }
+        //scan the bucket for the max gap
+        int maxgap = 0;
+        int previous = min;
+        for(int i=0; i<n-1; i++) {
+            //skip the empty bucket
+            if(bucket_min[i]==Integer.MAX_VALUE && bucket_max[i]==Integer.MIN_VALUE)
+                continue;
+            maxgap = Math.max(maxgap, bucket_min[i] - previous);
+            previous = bucket_max[i];
+        }
+        maxgap = Math.max(maxgap, max-previous);
+        System.out.println("The max gap between the successive elements is "+maxgap);
+        return maxgap;
     }
 }
 

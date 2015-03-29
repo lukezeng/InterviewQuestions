@@ -31,6 +31,7 @@ public class Testing {
             System.out.print(colorArr[i] + ",");
         }
         System.out.println();
+        SortingAlgorithm.maximumGap(new int[] {10,1,9,4,2,3});
     }
 
     public static void searchingAlgorithms(){
