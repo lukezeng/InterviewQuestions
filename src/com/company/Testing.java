@@ -97,6 +97,8 @@ public class Testing {
         System.out.println();
         StringInterviewQuestions.anagrams(new String[] {"",""});
         StringInterviewQuestions.anagrams(new String[] {"dog","cat","god","tac","bug"});
+        System.out.println();
+        StringInterviewQuestions.findSubstring("barfoothefoobarman", new String[] {"foo","bar"});
     }
 
     public static void treeInterviewQuestions(){

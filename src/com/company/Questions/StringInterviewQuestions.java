@@ -5,6 +5,7 @@ import com.company.util.Helper;
 import java.util.Arrays;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedList;
 
 /**
  * Created by Luke on 2/8/2015.
@@ -61,5 +62,56 @@ public class StringInterviewQuestions {
         list.addAll(remain.values());
         Helper.printStringList("Anagrams strings are: ", list);
         return list;
+    }
+
+    /**
+     * Runtime O(n) Space o(m) (n is len of S, m is len of L)
+     */
+    public static ArrayList<Integer> findSubstring(String S, String[] L) {
+        //https://leetcode.com/problems/substring-with-concatenation-of-all-words/
+        ArrayList<Integer> result = new ArrayList<Integer>();
+        if(L.length>0 && L[0].length()>0 && S.length()>=(L.length*L[0].length())) {
+            final HashMap<String, Integer> dict = new HashMap<String, Integer>();
+            //build dict for word in L
+            for(String s: L) {
+                dict.put(s, dict.containsKey(s) ? dict.get(s)+1 : 1);
+            }
+            int len = L[0].length();
+            for(int i=0; i<len; i++) {
+                //make a copy of dict, and store the remaining words in the dict
+                HashMap<String, Integer> map = new HashMap<String, Integer>(dict);
+                //use queue to store current sequence
+                LinkedList<String> queue = new LinkedList<String>();
+                for(int j=i; j+len <= S.length(); j+=len) {
+                    String str = S.substring(j, j+len);
+                    //if the word is in the dict
+                    if(dict.containsKey(str)) {
+                        //add the word into sequence
+                        queue.add(str);
+                        //if we already have enough this word in sequence, we need to move the first this word appear in sequence
+                        if(map.get(str)==0) {
+                            while(!str.equals(queue.peek())) {
+                                String other = queue.poll();
+                                //put removed other words back into remaining words map
+                                map.put(other, map.get(other)+1);
+                            }
+                            queue.remove();
+                        }else {
+                            map.put(str, map.get(str)-1);
+                        }
+
+                        if(queue.size()==L.length) {
+                            //the words in sequence that matches all words in L, add the start index of sequence to result
+                            result.add(j - len*(L.length-1));
+                        }
+                    }else {
+                        queue.clear();
+                        map = new HashMap<String,Integer>(dict);
+                    }
+                }
+            }
+        }
+        Helper.printArrayList("The possible start position of the substring are ", result);
+        return result;
     }
 }
