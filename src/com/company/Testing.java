@@ -103,6 +103,7 @@ public class Testing {
         System.out.println(StringInterviewQuestions.constructDate(19, 19, 3));
         System.out.println(StringInterviewQuestions.constructDate(2, 2, 28));
         System.out.println();
+        StringInterviewQuestions.accessCode(new String[] {"x","y","xy","yy","","yx"});
     }
 
     public static void treeInterviewQuestions(){

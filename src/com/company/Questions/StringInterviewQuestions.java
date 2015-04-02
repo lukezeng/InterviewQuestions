@@ -159,4 +159,34 @@ public class StringInterviewQuestions {
             return 30;
         }
     }
+
+    /**
+     * Your job is to compare a list of the access codes and find the number of distinct codes,
+     * where two codes are considered to be "identical" (not distinct) if they're exactly the same, or the same but reversed.
+     * The access codes only contain the letters a-z, are all lowercase, and have at most 10 characters.
+     * Each set of access codes provided will have at most 5000 codes in them
+     */
+    public static int accessCode(String[] x) {
+        if(x.length == 0) return 0;
+        HashSet<String> codes = new HashSet<String>();
+        for(String s: x) {
+            if(!codes.contains(s) && !codes.contains(reverse(s))) {
+                codes.add(s);
+            }
+        }
+        System.out.println("There are "+codes.size()+" distinct access codes");
+        return codes.size();
+    }
+    private static String reverse(String str) {
+        if(str.length()==0) return "";
+        char[] chars = str.toCharArray();
+        int L=0, R=chars.length-1;
+        while(L < R) {
+            char c = chars[L];
+            chars[L] = chars[R];
+            chars[R] = c;
+            L++; R--;
+        }
+        return new String(chars);
+    }
 }
