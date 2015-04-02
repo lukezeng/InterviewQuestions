@@ -2,10 +2,11 @@ package com.company.Questions;
 
 import com.company.util.Helper;
 
-import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Stack;
 import java.util.HashMap;
+import java.util.Comparator;
 
 /**
  * Created by wenwzhou on 2/23/15.
@@ -163,5 +164,38 @@ public class ArrayInterviewQuestions {
         }
         System.out.println("The length of the longest consequence sequence is "+max);
         return max;
+    }
+
+    /**
+     * Google coding challenge
+     * Write a function answer(intervals) that takes a list of pairs [start, end],
+     * returns the total amount of time that Dolly the Zombit was monitored by at least one minion.
+     * Each [start, end] pair represents the times when a minion started and finished monitoring the zombit.
+     * All values will be positive integers no greater than 2^30 - 1.
+     * You will always have end > start for each interval.
+     */
+    public static int workingHour(int[][] intervals) {
+        if(intervals.length == 0) return 0;
+        Arrays.sort(intervals, new Comparator<int[]>() {
+            @Override
+            public int compare(int[] a, int[] b) {
+                return Integer.compare(a[0], b[0]);
+            }
+        });
+        int start = 0, end = 0, hour = 0;
+        for(int[] period: intervals) {
+            if(period[0] > start) {
+                //a new interval disconnected with previous
+                start = period[0];
+                end = period[1];
+                hour += (period[1] - period[0]);
+            }else if(period[1] < end) {
+                //extend the end to the end of new period
+                hour += (period[1] - end);
+                end = period[1];
+            }
+        }
+        System.out.println("Minions worked "+hour+" hours to monitor the zombies today");
+        return hour;
     }
 }

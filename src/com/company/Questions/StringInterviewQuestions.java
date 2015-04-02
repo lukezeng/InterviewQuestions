@@ -2,10 +2,7 @@ package com.company.Questions;
 
 import com.company.util.Helper;
 
-import java.util.Arrays;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.LinkedList;
+import java.util.*;
 
 /**
  * Created by Luke on 2/8/2015.
@@ -113,5 +110,53 @@ public class StringInterviewQuestions {
         }
         Helper.printArrayList("The possible start position of the substring are ", result);
         return result;
+    }
+
+    /**
+     * Google coding challenge
+     * Construct the date string by the given three numbers. If there are multiple solution, return 'Ambiguous'
+     */
+    public static String constructDate(int x, int y, int z) {
+        if(x==y && y==z)  return (x<10?("0"+x):x) + "/" + (y<10?("0"+y):y) + "/" + (z<10?("0"+z):z);
+        List<Integer> month = new ArrayList<Integer>();
+        List<Integer> day = new ArrayList<Integer>();
+        List<Integer> year = new ArrayList<Integer>();
+        int[] nums = new int[] {x,y,z};
+        Arrays.sort(nums);
+        for(int n: nums) {
+            test(n, month, day, year);
+        }
+        if(month.size() == 3) {
+            return "Ambiguous";
+        }else if(month.size() == 2 && (month.get(0) != month.get(1) || day.size()>0)) {
+            return "Ambiguous";
+        }else if(month.size() == 1) {
+            if(day.size() == 2 && day.get(0) != day.get(1)) {
+                return "Ambiguous";
+            }
+        }
+        String res = (month.get(0)<10 ? "0":"") + month.get(0) + "/";
+        int d = month.size()==2 ? month.get(1) : day.get(0);
+        res = res + (d<10 ? "0":"") + d + "/";
+        res = res + (day.size()==2 ? day.get(1) : year.get(0));
+        return res;
+    }
+    private static void test(int n, List<Integer> month, List<Integer> day, List<Integer> year) {
+        if(n <= 12) {
+            month.add(n);
+        }else if(n <= getDaysInMonth(month.get(0))) {
+            day.add(n);
+        }else {
+            year.add(n);
+        }
+    }
+    private static int getDaysInMonth(int m) {
+        if(m==2) {
+            return 28;
+        }else if(m==1 || m==3 || m==5 || m==7 || m==8 || m==10 || m==12) {
+            return 31;
+        }else {
+            return 30;
+        }
     }
 }
