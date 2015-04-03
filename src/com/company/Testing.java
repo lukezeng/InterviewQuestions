@@ -132,6 +132,7 @@ public class Testing {
         TreeInterviewQuestions.printPath(Setup.getBinarySearchTree());
         TreeInterviewQuestions.commonAncestor(Setup.getBinarySearchTree(), 1, 3);
         System.out.println();
+        TreeInterviewQuestions.rightSideView(Setup.getRandomBinaryTree());
     }
 
     public static void recursiveInterviewQuestions(){
@@ -191,18 +192,18 @@ public class Testing {
 
     public static void arrayInterviewQuestions() {
         System.out.println("--------------------------------------- Array Interview Questions ---------------------------------------------");
-        ArrayInterviewQuestions.singleNumber(new int[] {2,2,1,3,1,4,4,4,3,2,3,1});
+        ArrayInterviewQuestions.singleNumber(new int[]{2, 2, 1, 3, 1, 4, 4, 4, 3, 2, 3, 1});
         System.out.println();
-        ArrayInterviewQuestions.productOfIntegerInArray(new int[]{1,2,6,5,9});
+        ArrayInterviewQuestions.productOfIntegerInArray(new int[]{1, 2, 6, 5, 9});
         System.out.println();
-        ArrayInterviewQuestions.firstMissingPositive(new int[] {3,4,-1,1});
+        ArrayInterviewQuestions.firstMissingPositive(new int[]{3, 4, -1, 1});
         System.out.println();
-        ArrayInterviewQuestions.largestRectangleArea(new int[] {2,3,3,4,5});
+        ArrayInterviewQuestions.largestRectangleArea(new int[]{2, 3, 3, 4, 5});
         ArrayInterviewQuestions.largestRectangleArea(new int[] {5,4,3,3,2});
         System.out.println();
-        ArrayInterviewQuestions.longestConsecutive(new int[] {100,4,200,1,3,2});
+        ArrayInterviewQuestions.longestConsecutive(new int[]{100, 4, 200, 1, 3, 2});
         System.out.println();
-        ArrayInterviewQuestions.workingHour(new int[][] {new int[]{1,3}, new int[] {3,6}});
+        ArrayInterviewQuestions.workingHour(new int[][]{new int[]{1, 3}, new int[]{3, 6}});
         ArrayInterviewQuestions.workingHour(new int[][] {new int[] {10,14}, new int[] {4,18}, new int[] {19, 20}, new int[] {19, 20}, new int[] {13, 20}});
         System.out.println();
     }

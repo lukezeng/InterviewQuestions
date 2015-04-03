@@ -1,8 +1,9 @@
 package com.company.Questions;
 
 import com.company.dataStructures.BinaryTreeNode;
+import com.company.util.Helper;
 
-import java.util.ArrayList;
+import java.util.*;
 
 /**
  * Created by Luke on 2/1/2015.
@@ -82,4 +83,27 @@ public class TreeInterviewQuestions {
     private static boolean covers(BinaryTreeNode node, int target) {
         return node != null && (node.val == target || covers(node.left, target) || covers(node.right, target));
     }
+
+    /**
+     * Given a binary tree, imagine yourself standing on the right side of it, return the values of the nodes you can see.
+     * Could be solve both by DFS and BFS
+     */
+    public static List<Integer> rightSideView(BinaryTreeNode root) {
+        List<Integer> nodes = new ArrayList<Integer>();
+        if(root==null) return nodes;
+        nodes.add(root.val);
+        dfs(root, nodes, 0);
+        Helper.printArrayList("The rightmost nodes on each level are", nodes);
+        return nodes;
+    }
+    private static void dfs(BinaryTreeNode n, List<Integer> nodes, int level) {
+        if(n==null) return;
+        dfs(n.left, nodes, level+1);
+        if(level >= nodes.size())
+            nodes.add(n.val);
+        else
+            nodes.set(level, n.val);
+        dfs(n.right, nodes, level+1);
+    }
+
 }
