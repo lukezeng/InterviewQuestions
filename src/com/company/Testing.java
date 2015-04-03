@@ -7,6 +7,8 @@ import com.company.util.Helper;
 import com.company.util.Setup;
 
 import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * Created by Luke on 1/31/2015.
@@ -104,6 +106,11 @@ public class Testing {
         System.out.println(StringInterviewQuestions.constructDate(2, 2, 28));
         System.out.println();
         StringInterviewQuestions.accessCode(new String[] {"x","y","xy","yy","","yx"});
+        System.out.println();
+        Set<String> dict = new HashSet<String>();
+        dict.add("cat"); dict.add("cats"); dict.add("and");  dict.add("sand");  dict.add("dog");
+        System.out.println("The string can "+(StringInterviewQuestions.wordBreak("catsanddog", dict) ? "" : "not ")+"be break by words in dictionary");
+        StringInterviewQuestions.wordBreakII("catsanddog", dict);
     }
 
     public static void treeInterviewQuestions(){
@@ -197,5 +204,6 @@ public class Testing {
         System.out.println();
         ArrayInterviewQuestions.workingHour(new int[][] {new int[]{1,3}, new int[] {3,6}});
         ArrayInterviewQuestions.workingHour(new int[][] {new int[] {10,14}, new int[] {4,18}, new int[] {19, 20}, new int[] {19, 20}, new int[] {13, 20}});
+        System.out.println();
     }
 }

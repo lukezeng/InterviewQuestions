@@ -189,4 +189,66 @@ public class StringInterviewQuestions {
         }
         return new String(chars);
     }
+
+    /**
+     * BFS solution
+     * Runtime O(n^2) Space O(n)
+     */
+    public static boolean wordBreak(String s, Set<String> dict) {
+        //https://leetcode.com/submissions/detail/23694123/
+        int n = s.length();
+        if(n==0 || dict==null || dict.size()==0) return false;
+        Deque<Integer> queue = new LinkedList<Integer>(); //keep track the start index of the word
+        Set<Integer> visited = new HashSet<Integer>(); //mark the visited node
+        queue.add(0); //start from index 0
+        visited.add(0);
+        while(!queue.isEmpty()) {
+            int curIdx = queue.poll();
+            //find the word starting from current index in the rest of the string
+            for(int i=curIdx+1; i<=n; i++) {
+                if(visited.contains(i))
+                    continue; //skip the already visited node
+                else {
+                    if(dict.contains(s.substring(curIdx, i))) {
+                        if(i==n) return true;
+                        queue.add(i);
+                        visited.add(i);
+                    }
+                }
+            }
+        }
+        return false;
+    }
+
+    /**
+     * DFS solution
+     */
+    public static List<String> wordBreakII(String s, Set<String> dict) {
+        List<String> sol = new ArrayList<String>();
+        if(s.length()==0 || dict==null || dict.size()==0) return sol;
+        for(int i=s.length()-1; i>=0; i--) {
+            if(dict.contains(s.substring(i)))
+                break;
+            else if(i==0)
+                return sol;
+        }
+        StringBuilder sentence = new StringBuilder();
+        dfs(s, dict, 0, sentence, sol);
+        Helper.printStringList("Break the string into sentences:",sol);
+        return sol;
+    }
+    private static void dfs(String s, Set<String> dict, int start, StringBuilder sentence, List<String> sol) {
+        if(start >= s.length()) {
+            sentence.deleteCharAt(sentence.length()-1);
+            sol.add(sentence.toString());
+            return;
+        }
+        for(String word: dict) {
+            if(word.length()<=(s.length()-start) && word.equals(s.substring(start,start+word.length()))) {
+                StringBuilder copy = new StringBuilder(sentence);
+                copy.append(word+" ");
+                dfs(s, dict, start+word.length(), copy, sol);
+            }
+        }
+    }
 }
