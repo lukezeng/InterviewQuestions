@@ -4,6 +4,7 @@ import com.company.util.Helper;
 import static com.company.util.Helper.swap;
 import static java.lang.System.arraycopy;
 import java.util.Arrays;
+import java.util.Comparator;
 
 /**
  * Created by Luke on 1/31/2015.
@@ -133,6 +134,38 @@ public class SortingAlgorithm {
         maxgap = Math.max(maxgap, max-previous);
         System.out.println("The max gap between the successive elements is "+maxgap);
         return maxgap;
+    }
+    /**
+     * Bubble sort O(n^2)
+     */
+    public static String largestNumber(int[] num) {
+        //https://leetcode.com/problems/largest-number/
+        if(num.length==0) return "";
+        Comparator<Integer> comp = new Comparator<Integer>() {
+            @Override
+            public int compare(Integer s1, Integer s2) {
+                String str1 = Integer.toString(s1) + Integer.toString(s2);
+                String str2 = Integer.toString(s2) + Integer.toString(s1);
+                return str1.compareTo(str2);
+            }
+        };
+        for(int i=num.length-1; i>=0; i--) {
+            for(int j=0; j<i; j++) {
+                if(comp.compare(num[j], num[j+1]) > 0) {
+                    //j should be behind j+1, swap j and j+1
+                    int tmp = num[j];
+                    num[j] = num[j+1];
+                    num[j+1] = tmp;
+                }
+            }
+        }
+        if(num[num.length-1]==0) return "0";
+        //construct the final result
+        StringBuilder res = new StringBuilder();
+        for(int i=num.length-1; i>=0; i--) {
+            res.append(Integer.toString(num[i]));
+        }
+        return res.toString();
     }
 }
 
