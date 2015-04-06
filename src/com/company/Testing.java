@@ -33,10 +33,10 @@ public class Testing {
             System.out.print(colorArr[i] + ",");
         }
         System.out.println();
-        SortingAlgorithm.maximumGap(new int[] {10,1,9,4,2,3});
+        SortingAlgorithm.maximumGap(new int[]{10, 1, 9, 4, 2, 3});
         System.out.println();
         System.out.println("The largest number could be formed is "+SortingAlgorithm.largestNumber(new int[] {0, 0}));
-        System.out.println("The largest number could be formed is "+SortingAlgorithm.largestNumber(new int[] {3, 30, 34, 5, 9}));
+        System.out.println("The largest number could be formed is " + SortingAlgorithm.largestNumber(new int[]{3, 30, 34, 5, 9}));
     }
 
     public static void searchingAlgorithms(){
@@ -179,8 +179,8 @@ public class Testing {
         DynamicProgramming.buySellStockI(Setup.getSortedArray());
         DynamicProgramming.uniquePath(1, 1);
         DynamicProgramming.uniquePath(2,2);
-        DynamicProgramming.uniquePath(3,3);
-        DynamicProgramming.uniquePath(15,15);
+        DynamicProgramming.uniquePath(3, 3);
+        DynamicProgramming.uniquePath(15, 15);
         DynamicProgramming.maxSubArray(maxSub);
         System.out.println(DynamicProgramming.longestIncreaseSubsequence(maxSub));
         System.out.println(DynamicProgramming.longestCommonSubstring("ACCGGGTTAC", "AGGACCA"));
@@ -189,8 +189,8 @@ public class Testing {
         System.out.println();
         DynamicProgramming.calculateMinimumHP(Setup.getDungeonRooms());
         System.out.println();
-        DynamicProgramming.isInterleave("aabcc","dbbca","aadbbcbcac");
-        DynamicProgramming.isInterleave("aabcc","dbbca","aadbbbaccc");
+        DynamicProgramming.isInterleave("aabcc", "dbbca", "aadbbcbcac");
+        DynamicProgramming.isInterleave("aabcc", "dbbca", "aadbbbaccc");
     }
 
     public static void arrayInterviewQuestions() {
@@ -209,5 +209,6 @@ public class Testing {
         ArrayInterviewQuestions.workingHour(new int[][]{new int[]{1, 3}, new int[]{3, 6}});
         ArrayInterviewQuestions.workingHour(new int[][]{new int[]{10, 14}, new int[]{4, 18}, new int[]{19, 20}, new int[]{19, 20}, new int[]{13, 20}});
         System.out.println();
+        ArrayInterviewQuestions.searchMatrix(new int[][]{new int[]{1, 3, 5}, new int[]{10, 11, 16}}, 3);
     }
 }

@@ -3,7 +3,7 @@ package com.company.Questions;
 import com.company.util.Helper;
 
 import java.util.Arrays;
-import java.util.List;
+import java.util.HashSet;
 import java.util.Stack;
 import java.util.HashMap;
 import java.util.Comparator;
@@ -197,5 +197,34 @@ public class ArrayInterviewQuestions {
         }
         System.out.println("Minions worked "+hour+" hours to monitor the zombies today");
         return hour;
+    }
+
+    /**
+     * Binary search in a 2D sorted matrix, treat the matrix as a flat list
+     * Runtime O((m+n)log(m+n)) Space O(1)
+     */
+    public static boolean searchMatrix(int[][] matrix, int target) {
+        //https://leetcode.com/problems/search-a-2d-matrix/
+        int rows = matrix.length;
+        if(rows==0) return false;
+        int cols = matrix[0].length;
+        if(cols==0) return false;
+        int l = 0, r = rows*cols-1;
+        while(l < r) {
+            int m = l + (r-l)/2;
+            if(matrix[m/cols][m%cols] < target) {
+                //go to right half
+                l = m+1;
+            }else {
+                //go to left half
+                r = m;
+            }
+        }
+        if(matrix[l/cols][l%cols]==target) {
+            System.out.println("Target "+target+" is in matrix ("+l/cols+","+l%cols+")");
+        }else {
+            System.out.println("Does not find target "+target+" in matrix");
+        }
+        return matrix[l/cols][l%cols]==target;
     }
 }
