@@ -114,6 +114,8 @@ public class Testing {
         dict.add("cat"); dict.add("cats"); dict.add("and");  dict.add("sand");  dict.add("dog");
         System.out.println("The string can "+(StringInterviewQuestions.wordBreak("catsanddog", dict) ? "" : "not ")+"be break by words in dictionary");
         StringInterviewQuestions.wordBreakII("catsanddog", dict);
+        System.out.println();
+        StringInterviewQuestions.generateParentheses(3);
     }
 
     public static void treeInterviewQuestions(){

@@ -251,4 +251,24 @@ public class StringInterviewQuestions {
             }
         }
     }
+
+    public static List<String> generateParentheses(int n) {
+        //https://leetcode.com/problems/generate-parentheses/
+        List<String> sol = new ArrayList<String>();
+        addParentheses("", n, 0, sol);
+        Helper.printStringList("The possible combination of "+n+" parentheses is:", sol);
+        return sol;
+    }
+    private static void addParentheses(String str, int open, int close, List<String> sol) {
+        if(open==0 && close==0) {
+            //all the open and close parentheses are added into string, put this combination into result
+            sol.add(str);
+            return;
+        }
+        //has more close parentheses to be added?
+        if(close != 0) addParentheses(str+')', open, close-1, sol);
+        //has more open parentheses to be added?
+        //if yes, increase # of close to be added by one
+        if(open != 0) addParentheses(str+'(', open-1, close+1, sol);
+    }
 }
